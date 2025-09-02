@@ -1,0 +1,113 @@
+/* style.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #a38fb9, #d35a22);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: bgAnimate 15s ease infinite;
+}
+
+@keyframes bgAnimate {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 320px;
+  transform: scale(0);
+  animation: popIn 0.8s forwards;
+}
+
+@keyframes popIn {
+  to {transform: scale(1);}
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  animation: fadeIn 1s ease forwards;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+
+input {
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  width: 170px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+input:focus {
+  transform: scale(1.05);
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background-color: #ffdc00;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ffb700;
+  transform: scale(1.05);
+}
+
+.weather {
+  margin-top: 25px;
+  background: rgba(255,255,255,0.2);
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.weather.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.weather h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+.weather p {
+  margin: 5px 0;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
